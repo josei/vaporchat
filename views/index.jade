@@ -1,0 +1,21 @@
+doctype 5
+html
+  head
+    title Vapor Chat
+    meta(name='description') Chat with random buddies!
+    script(src='http://code.jquery.com/jquery-1.9.1.min.js')
+    script(src='/socket.io/socket.io.js')
+    != js('application')
+    != css('application')
+  body
+    #container
+      h1 Vapor Chat
+      #loading
+        h2 Waiting for a chat mate...
+        img.spinner(src='/images/spinner.gif')
+      #chat(style='display: none;')
+        #message-area
+          #message
+        #own-message
+        form#typing(action='#')
+          input#typing-box(type="text", name="message", autocomplete="off")
